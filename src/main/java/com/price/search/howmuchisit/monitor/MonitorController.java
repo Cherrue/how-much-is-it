@@ -1,5 +1,7 @@
 package com.price.search.howmuchisit.monitor;
 
+import com.price.search.howmuchisit.common.dto.CommonResponse;
+import com.price.search.howmuchisit.common.enums.CommonResultCode;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -15,7 +17,7 @@ public class MonitorController {
     @Operation(summary = "ping", description = "return I'm Alive!")
     @ApiResponse(responseCode = "200", description = "Are you alive?")
     @GetMapping("/ping")
-    public String ping() {
-        return "I'm Alive!";
+    public CommonResponse<String> ping() {
+        return CommonResponse.success(CommonResultCode.SUCCESS, "I'm Alive!");
     }
 }

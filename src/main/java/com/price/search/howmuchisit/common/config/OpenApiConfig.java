@@ -1,4 +1,4 @@
-package com.price.search.howmuchisit.config;
+package com.price.search.howmuchisit.common.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
