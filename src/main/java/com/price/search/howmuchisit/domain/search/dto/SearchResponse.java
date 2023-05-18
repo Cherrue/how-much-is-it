@@ -20,10 +20,10 @@ public class SearchResponse {
 
     public static SearchResponse fromNaverItem(SearchRequest request, NaverItem naverItem) {
         return SearchResponse.builder()
-                .brand(naverItem.getBrand())
+                .brand(naverItem.getBrand() != null ? naverItem.getBrand() : naverItem.getMaker())
                 .title(naverItem.getTitle())
                 .amount(request.getAmount())
-                .price(naverItem.getLprice())
+                .price(naverItem.getLprice() != 0 ? naverItem.getLprice() : naverItem.getHprice())
                 .image(naverItem.getImage())
                 .link(naverItem.getLink())
                 .build();
