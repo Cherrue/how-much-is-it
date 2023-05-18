@@ -1,0 +1,8 @@
+### search case 1 이름 => CJ 삼호어묵 <b>오색어묵탕</b> 365G x 2개 8820
+GET http://localhost:8080/api/v1/search?brand=삼호&title=오색어묵탕&amount=365g
+
+### search case 4 상표 이름 용량 묶음 => empty
+### search case 5 상표 이름 용량 묶음 특수문자 제거 => empty
+### search case 7 상표 이름 용량 묶음 단위 제거 => empty
+### search case 8 단순 오타 (우색어묵탕) => empty
+### search case 9 의미있는 오타 (육색어묵탕) => 잡내없이 깊고 깔끔한 육수의 돼지국밥 고기국밥 국밥 700g 7500
