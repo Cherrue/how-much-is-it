@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.price.search</groupId>
 	<artifactId>how-much-is-it</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>how-much-is-it</name>
 	<description>how-much-is-it</description>
 	<properties>
