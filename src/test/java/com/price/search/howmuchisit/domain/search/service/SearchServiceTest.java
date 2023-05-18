@@ -4,6 +4,7 @@ import com.price.search.howmuchisit.domain.naver.dto.NaverItem;
 import com.price.search.howmuchisit.domain.naver.service.NaverSearchService;
 import com.price.search.howmuchisit.domain.search.dto.SearchRequest;
 import com.price.search.howmuchisit.domain.search.dto.SearchResponse;
+import com.price.search.howmuchisit.domain.search.repository.SearchLogRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,6 +22,9 @@ class SearchServiceTest {
 
     @Mock
     private NaverSearchService naverSearchService;
+
+    @Mock
+    private SearchLogRepository searchLogRepository;
 
     @InjectMocks
     private SearchService searchService;
@@ -54,6 +58,8 @@ class SearchServiceTest {
         );
         when(naverSearchService.searchItems(anyString()))
                 .thenReturn(naverItems);
+        when(searchLogRepository.save(any()))
+                .thenReturn(null);
 
         // Act
         List<SearchResponse> searchResponses = searchService.search(request);
