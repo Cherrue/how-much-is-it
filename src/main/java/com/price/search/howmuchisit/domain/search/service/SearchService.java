@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -40,8 +41,8 @@ public class SearchService {
     }
 
     private String createSearchQuery(SearchRequest request) {
-        return request.getBrand() +
-                request.getTitle() +
-                request.getAmount();
+        return Optional.ofNullable(request.getBrand()).orElse("") +
+                Optional.ofNullable(request.getTitle()).orElse("") +
+                Optional.ofNullable(request.getAmount()).orElse("");
     }
 }
